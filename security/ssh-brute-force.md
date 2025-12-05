@@ -127,10 +127,13 @@ sudo fail2ban-client status sshd # ip ban list 확인
 ```bash
 sudo iptables -L -n # reject 된 ip 확인
 ```
-차단된 ip 예시
+#### 차단된 ip 예시
 ![alt text](fail2ban_ip_ban.png)
 **Chain f2b-sshd 하위 REJECT 부분에 공격자 ip 가 거절된 상태를 확인**
-
+#### 차단된 ip 해제
+```bash
+sudo fail2ban-client set sshd unbanip 192.168.xx.xx
+```
 ## 7. macOS UTM 환경에서 재현하는 방법
 실제 공격 상황을 안전하게 가상 환경에서 재현 가능하다.
 ### 7.1 환경 구성
